@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+  <h1>Новая запись на приём</h1>
+  <div class="card">
+    <p class="muted">Заполните все поля. Пустая форма приведёт к странице отказа.</p>
+    <form method="post" action="/appointments/new">
+      <label for="patientName">ФИО пациента</label>
+      <input id="patientName" name="patientName" value="<%= form.patientName %>" />
+
+      <label for="doctorName">ФИО врача</label>
+      <input id="doctorName" name="doctorName" value="<%= form.doctorName %>" placeholder="Например: Петров И.В." />
+
+      <label for="specialty">Специальность</label>
+      <input id="specialty" name="specialty" value="<%= form.specialty %>" placeholder="Терапевт" />
+
+      <label for="date">Дата</label>
+      <input id="date" type="date" name="date" value="<%= form.date %>" />
+
+      <label for="time">Время</label>
+      <input id="time" type="time" name="time" value="<%= form.time %>" />
+
+      <div class="actions">
+        <button type="submit">Сохранить запись</button>
+        <a class="btn btn-secondary" href="/appointments">К списку</a>
+      </div>
+    </form>
+  </div>
+<%- include('../partials/footer') %>
