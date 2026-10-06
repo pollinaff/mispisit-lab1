@@ -1,0 +1,15 @@
+{
+  "name": "mispisit-lab1-zapisi-k-vrachu",
+  "version": "0.0.1",
+  "description": "Электронная система записи к врачу городской поликлиники",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "4.21.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
