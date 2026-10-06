@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+  <h1>Список записей на приём</h1>
+  <div class="card">
+    <% if (items.length === 0) { %>
+      <p>Записей пока нет. Создайте первую.</p>
+    <% } else { %>
+      <table>
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Пациент</th>
+            <th>Врач</th>
+            <th>Дата и время</th>
+            <th>Статус</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% items.forEach(function(item) { %>
+            <tr>
+              <td><%= item.id %></td>
+              <td><%= item.patientName %></td>
+              <td><%= item.doctorName %> (<%= item.specialty %>)</td>
+              <td><%= item.date %> <%= item.time %></td>
+              <td><%= item.status %></td>
+              <td><a href="/appointments/<%= item.id %>">Открыть</a></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+    <div class="actions">
+      <a class="btn" href="/appointments/new">Новая запись</a>
+      <a class="btn btn-danger" href="/appointments/1?as=guest">Открыть как гость (отказ)</a>
+    </div>
+  </div>
+<%- include('../partials/footer') %>

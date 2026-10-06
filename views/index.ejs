@@ -1,0 +1,21 @@
+<%
+  // Простой layout без express-ejs-layouts: каждая страница включает шапку сама через partial
+%>
+<%- include('partials/header') %>
+  <h1>Электронная система записи к врачу</h1>
+  <div class="card">
+    <p><%= projectDescription %></p>
+    <p>Версия <%= version %>. Разработка продолжается.</p>
+    <p>Главные действия этой версии:</p>
+    <ul>
+      <li>создать запись пациента на приём к врачу;</li>
+      <li>просмотреть список уже созданных записей;</li>
+      <li>увидеть отказ при пустых данных или недостаточных правах.</li>
+    </ul>
+    <div class="actions">
+      <a class="btn" href="/appointments/new">Создать запись</a>
+      <a class="btn btn-secondary" href="/appointments">Открыть список</a>
+      <a class="btn btn-danger" href="/appointments/1?as=guest">Демо отказа (чужая запись)</a>
+    </div>
+  </div>
+<%- include('partials/footer') %>
