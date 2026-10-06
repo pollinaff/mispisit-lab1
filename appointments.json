@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "patientName": "Иванова Анна Сергеевна",
+    "doctorName": "Петров И.В.",
+    "specialty": "Терапевт",
+    "date": "2026-10-10",
+    "time": "10:30",
+    "status": "подтверждена",
+    "ownerRole": "patient"
+  },
+  {
+    "id": 2,
+    "patientName": "Сидоров Павел Алексеевич",
+    "doctorName": "Козлова М.А.",
+    "specialty": "ЛОР",
+    "date": "2026-10-12",
+    "time": "14:00",
+    "status": "подтверждена",
+    "ownerRole": "patient"
+  }
+]
