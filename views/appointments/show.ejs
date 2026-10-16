@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+  <h1>Карточка записи №<%= item.id %></h1>
+  <div class="card">
+    <p class="meta"><strong>Пациент:</strong> <%= item.patientName %></p>
+    <p class="meta"><strong>Врач:</strong> <%= item.doctorName %></p>
+    <p class="meta"><strong>Специальность:</strong> <%= item.specialty %></p>
+    <p class="meta"><strong>Дата и время:</strong> <%= item.date %> <%= item.time %></p>
+    <p class="meta"><strong>Статус:</strong> <%= item.status %></p>
+    <div class="actions">
+      <a class="btn" href="/appointments">К списку</a>
+      <a class="btn btn-secondary" href="/appointments/new">Ещё одна запись</a>
+    </div>
+  </div>
+<%- include('../partials/footer') %>

@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+  <h1><%= title %></h1>
+  <div class="card alert">
+    <p class="meta"><strong>Кто пытался:</strong> <%= actor %></p>
+    <p class="meta"><strong>Что пытались сделать:</strong> <%= attemptedAction %></p>
+    <p class="meta"><strong>Почему система отказала:</strong> <%= reason %></p>
+  </div>
+  <div class="actions">
+    <a class="btn" href="/">На главную</a>
+    <a class="btn btn-secondary" href="/appointments">К списку записей</a>
+    <a class="btn" href="/appointments/new">Создать запись правильно</a>
+  </div>
+<%- include('partials/footer') %>
