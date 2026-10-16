@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= title %> — <%= projectName %></title>
+  <style>
+    :root {
+      --bg: #f4f7f5;
+      --card: #ffffff;
+      --text: #1d2a24;
+      --muted: #5b6b63;
+      --accent: #1f6f5b;
+      --accent-soft: #e6f3ee;
+      --danger: #8b2e2e;
+      --danger-bg: #f8ecec;
+      --border: #d5e0da;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef5f1 0%, var(--bg) 240px);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+    }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 24px 20px 48px; }
+    .brand { font-size: 1.15rem; font-weight: 700; margin: 0 0 4px; }
+    .muted { color: var(--muted); margin: 0; }
+    nav { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+    nav a {
+      text-decoration: none;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+    nav a.active { background: var(--accent); color: #fff; }
+    h1 { font-size: 1.6rem; margin: 0 0 12px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { font-size: 0.9rem; color: var(--muted); font-weight: 600; }
+    label { display: block; margin: 12px 0 4px; font-weight: 600; }
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font: inherit;
+    }
+    .actions { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+    button, .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 16px;
+      font: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary { background: #4a5d55; }
+    .btn-danger { background: var(--danger); }
+    .alert {
+      background: var(--danger-bg);
+      border: 1px solid #e2b6b6;
+      color: var(--danger);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .meta { margin: 6px 0; }
+    .version { font-size: 0.9rem; color: var(--muted); margin-top: 24px; }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="padding-top:0;padding-bottom:0;">
+      <p class="brand"><%= projectName %></p>
+      <p class="muted"><%= projectDescription %></p>
+      <nav>
+        <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Главная</a>
+        <a href="/appointments" class="<%= currentPath.startsWith('/appointments') && currentPath.indexOf('/new') === -1 && !/\/appointments\/\d+/.test(currentPath) ? 'active' : '' %>">Список записей</a>
+        <a href="/appointments/new" class="<%= currentPath === '/appointments/new' ? 'active' : '' %>">Новая запись</a>
+        <a href="/access-denied" class="<%= currentPath === '/access-denied' ? 'active' : '' %>">Пример отказа</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
