@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= title %> — <%= projectName %></title>
+  <link rel="stylesheet" href="/vendor/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light navbar-clinic py-3">
+    <div class="container">
+      <a class="navbar-brand" href="/"><%= projectName %></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link <%= currentPath === '/' ? 'active' : '' %>" href="/">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= currentPath === '/appointments' ? 'active' : '' %>" href="/appointments">Список записей</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= currentPath === '/appointments/new' ? 'active' : '' %>" href="/appointments/new">Новая запись</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= currentPath === '/access-denied' ? 'active' : '' %>" href="/access-denied">Пример отказа</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="container py-4 pb-5">
