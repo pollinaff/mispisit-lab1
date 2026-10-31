@@ -2,7 +2,7 @@ name: mispisit-feofanova
 
 services:
   app:
-    image: pollinaff00/mispisit-lab1:0.0.3
+    image: pollinaff00/mispisit-lab1:0.0.4
     ports:
       - "8080:8080"
     environment:

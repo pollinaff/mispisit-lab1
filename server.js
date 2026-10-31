@@ -9,11 +9,12 @@ const PORT = process.env.PORT || 8080;
 const PROJECT_NAME = "Электронная система записи к врачу";
 const PROJECT_DESCRIPTION =
   "Система онлайн-записи пациентов на приём к врачам городской поликлиники";
-const VERSION = "0.0.3";
+const VERSION = "0.0.4";
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
