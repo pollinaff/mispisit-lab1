@@ -1,0 +1,49 @@
+<%- include('../partials/header') %>
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+    <h1 class="h3 mb-0">Список записей на приём</h1>
+    <a class="btn btn-clinic btn-sm" href="/appointments/new">Новая запись</a>
+  </div>
+
+  <div class="card border-0 shadow-sm">
+    <div class="card-body p-4">
+      <% if (items.length === 0) { %>
+        <div class="empty-state text-center py-5 px-3">
+          <h2 class="h5 mb-2">Записей пока нет</h2>
+          <p class="text-secondary mb-4">Список пуст, но система готова к работе. Создайте первую запись на приём к врачу.</p>
+          <a class="btn btn-clinic" href="/appointments/new">Создать первую запись</a>
+        </div>
+      <% } else { %>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>№</th>
+                <th>Пациент</th>
+                <th>Врач</th>
+                <th>Дата и время</th>
+                <th>Статус</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% items.forEach(function(item) { %>
+                <tr>
+                  <td><%= item.id %></td>
+                  <td><%= item.patientName %></td>
+                  <td><%= item.doctorName %> (<%= item.specialty %>)</td>
+                  <td><%= item.date %> <%= item.time %></td>
+                  <td><span class="badge rounded-pill status-badge"><%= item.status %></span></td>
+                  <td><a class="link-success link-underline-opacity-0" href="/appointments/<%= item.id %>">Открыть</a></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <a class="btn btn-outline-danger btn-sm" href="/appointments/1?as=guest">Открыть как гость (отказ)</a>
+  </div>
+<%- include('../partials/footer') %>

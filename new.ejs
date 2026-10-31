@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+  <h1 class="h3 mb-3">Новая запись на приём</h1>
+  <div class="card border-0 shadow-sm">
+    <div class="card-body p-4">
+      <p class="text-secondary">Заполните все поля. Пустая форма приведёт к странице отказа.</p>
+      <form method="post" action="/appointments/new" class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label" for="patientName">ФИО пациента</label>
+          <input class="form-control" id="patientName" name="patientName" value="<%= form.patientName %>" required />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="doctorName">ФИО врача</label>
+          <input class="form-control" id="doctorName" name="doctorName" value="<%= form.doctorName %>" placeholder="Например: Петров И.В." required />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="specialty">Специальность</label>
+          <input class="form-control" id="specialty" name="specialty" value="<%= form.specialty %>" placeholder="Терапевт" required />
+        </div>
+        <div class="col-md-3">
+          <label class="form-label" for="date">Дата</label>
+          <input class="form-control" id="date" type="date" name="date" value="<%= form.date %>" required />
+        </div>
+        <div class="col-md-3">
+          <label class="form-label" for="time">Время</label>
+          <input class="form-control" id="time" type="time" name="time" value="<%= form.time %>" required />
+        </div>
+        <div class="col-12 d-flex flex-wrap gap-2 pt-2">
+          <button class="btn btn-clinic" type="submit">Сохранить запись</button>
+          <a class="btn btn-outline-secondary" href="/appointments">К списку</a>
+        </div>
+      </form>
+    </div>
+  </div>
+<%- include('../partials/footer') %>
