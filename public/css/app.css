@@ -1,0 +1,55 @@
+:root {
+  --clinic-primary: #1f6f5b;
+  --clinic-primary-dark: #185a49;
+  --clinic-soft: #e8f3ef;
+}
+
+body {
+  background: linear-gradient(180deg, #eef5f2 0%, #f8faf9 280px);
+  min-height: 100vh;
+}
+
+.navbar-clinic {
+  background: #fff;
+  border-bottom: 1px solid #d8e5df;
+}
+
+.navbar-clinic .navbar-brand {
+  color: var(--clinic-primary-dark);
+  font-weight: 700;
+}
+
+.navbar-clinic .nav-link.active {
+  background: var(--clinic-soft);
+  color: var(--clinic-primary-dark);
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.btn-clinic {
+  background: var(--clinic-primary);
+  border-color: var(--clinic-primary);
+  color: #fff;
+}
+
+.btn-clinic:hover {
+  background: var(--clinic-primary-dark);
+  border-color: var(--clinic-primary-dark);
+  color: #fff;
+}
+
+.hero-card {
+  border: 0;
+  box-shadow: 0 8px 24px rgba(31, 111, 91, 0.08);
+}
+
+.empty-state {
+  border: 1px dashed #c9d9d2;
+  border-radius: 0.75rem;
+  background: #fbfffd;
+}
+
+.status-badge {
+  background: var(--clinic-soft);
+  color: var(--clinic-primary-dark);
+}
